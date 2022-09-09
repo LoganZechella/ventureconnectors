@@ -1,0 +1,39 @@
+@import url('http://fonts.cdnfonts.com/css/arial-rounded-mt-bold');
+
+* {
+  margin: 1em 0.1em 0.5em 0.1em;
+  padding: 0;
+}
+
+body {
+    font-family: "Arial Rounded MT Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+div {
+    border: 2px solid black;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prompts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.btn-start {
+    height: 3em;
+    width: 10em;
+    background-color: #155ce9;
+    color: white;
+    font-family: "Arial Rounded MT Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 2em;
+}
+
