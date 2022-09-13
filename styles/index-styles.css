@@ -1,4 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/arial-rounded-mt-bold');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
 :root {
     --palette-darkest: #073673;
@@ -8,9 +9,17 @@
     --palette-lightest: #F2F2F2;
 }
 
+@media screen and (max-width: 390px) {
+    body {
+        width: 100%;
+    }
+}
+
+
+
 * {
-  margin: 1em 0.1em 0.5em 0.1em;
-  padding: 0;
+    margin: 1em 0.2em 0.5em 0.2em;
+    padding: 0;
 }
 
 body {
@@ -37,6 +46,31 @@ body {
     margin-top: 150px;
 }
 
+#input-form {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-email {
+    width: 75vw;
+    height: 50px;
+    background-color: var(--palette-lightest);
+    border: 2px solid var(--palette-less-dark);
+    text-align: center;
+}
+
+#btn-finish {
+    display: none;
+    height: 3em;
+    width: 10em;
+    background-color: var(--palette-less-dark);
+    color: white;
+    font-family: "Arial Rounded MT Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 2em;
+}
+
 .btn-start {
     height: 3em;
     width: 10em;
@@ -52,10 +86,11 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 0.5em;
-    width: 100%;
+    width: 80vw;
 }
 
-#btn-yes, #btn-no {
+#btn-yes,
+#btn-no {
     height: 3em;
     display: none;
     width: 10em;
@@ -64,3 +99,24 @@ body {
     font-family: "Arial Rounded MT Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-radius: 2em;
 }
+
+.links {
+    display: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    width: 80vw;
+}
+
+#twitter-link, #linkedin-link, #facebook-link, #website-link {
+    justify-content: center;
+    align-items: center;
+}
+
+i {
+    height: 100px;
+    width: 100px;
+    margin: 0 0 0 0;
+}
+

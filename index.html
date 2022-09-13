@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./styles/index-styles.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.cdnfonts.com/css/arial-rounded-mt-bold" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Welcome to Venture Connectors!</title>
 </head>
 
@@ -15,21 +17,54 @@
     </header>
 
     <main id="main" class="main">
-        <div id="prompts" class="prompts">
-            <h2 id="title" class="title">Welcome to Venture Connectors!</h2>
-            <p id="description" class="description">Please press the button below to begin.</p>
+        <div id="prompts" class="prompts" >
+            <h2 id="title" class="title" data-aos="fade-left">Welcome to Venture Connectors!</h2>
+            <p id="description" class="description" data-aos="fade-right">Please press the button below to begin.</p>
         </div>
 
         <div id="buttons" class="buttons">
-            <button id="btn-start" class="btn-start" onClick={}>Start</button>
+            <button id="btn-start" class="btn-start" onClick={} data-aos="fade-up">Start</button>
 
-            <button id="btn-yes" class="btn-yes" onClick={yesButtonClick()}>Yes</button>
-            <button id="btn-no" class="btn-no" onClick={noButtonClick()}>No</button>
+            <button id="btn-yes" class="btn-yes" onClick={yesButtonClick()} data-aos="fade-left">Yes</button>
+            <button id="btn-no" class="btn-no" onClick={noButtonClick()} data-aos="fade-right">No</button>
+
+            <form id="input-form" class="input-form">
+                <input id="input-email" class="input-email" type="text" placeholder="Enter your email here (Optional)" data-aos="fade-up">
+            </form>
+            <button id="btn-finish" class="btn-finish" onClick={finishSurvey()} data-aos="fade-up">Finish</button>
+            
+        </div>
+
+        <div id="links" class="links">
+            <a id="twitter-link" class="twitter-link" href="https://twitter.com/vclou" target="_blank" data-aos="fade-up">
+                <i class="bi bi-twitter"></i>
+            </a>
+
+            <a id="linkedin-link" class="linkedin-link" href="https://www.linkedin.com/in/ventureconnectors" target="_blank" data-aos="fade-down">
+                <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a id="facebook-link" class="facebook-link" href="https://www.facebook.com/VentureConnectorsLouisville/" target="_blank"
+                data-aos="fade-up">
+                <i class="bi bi-facebook"></i>
+            </a>
+
+            <a id="website-link" class="website-link" href="https://www.ventureconnectors.org/" target="_blank"
+                data-aos="fade-down">
+                <i class="bi bi-globe"></i>
+            </a>
+
         </div>
         
     </main>
 
     <script src="./scripts/app.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-out-back',
+        });
+    </script>
 </body>
 
 </html>
