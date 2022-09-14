@@ -29,6 +29,21 @@ startButton.addEventListener('click', function() {
     noButton.style.display = 'block';
 });
 
+function yesAnimation() {
+    yesButton.style.animation = '1s ease-in-out';
+    setTimeout(function() {
+        yesButton.style.animation = '';
+    }, 1000);
+    yesButton.style.backgroundColor = '#009000';
+}
+
+function noAnimation() {
+    noButton.style.animation = '1s ease-in-out';
+    setTimeout(function () {
+        noButton.style.animation = '';
+    }, 1000);
+    noButton.style.backgroundColor = '#C41E3A';
+}
 
 let yesCount = 0;
 let noCount = 0;
@@ -47,6 +62,8 @@ function yesButtonClick() {
         inputForm.style.display = 'flex';
         finishButton.style.display = 'block';
         promptsH2.innerHTML = 'Enter your email address below if you wish to stay in contact with Venture Connectors!';
+        document.getElementById('title').style.marginBottom = '0';
+        document.getElementById('prompts').style.marginTop = '10vh';
     }
 }
 
@@ -64,8 +81,12 @@ function noButtonClick() {
         inputForm.style.display = 'flex';
         finishButton.style.display = 'block';
         promptsH2.innerHTML = 'Enter your email address below if you wish to stay in contact with Venture Connectors!';
+        document.getElementById('title').style.marginBottom = '0';
+        document.getElementById('prompts').style.marginTop = '10vh';
     }
 }
+
+
 
 function finishSurvey() {
     let email = document.getElementById('input-email').value;
@@ -74,6 +95,7 @@ function finishSurvey() {
     inputForm.style.display = 'none';
     finishButton.style.display = 'none';
     promptsH2.innerHTML = exitPromptText;
+    document.getElementById('prompts').style.marginTop = '20vh';
     promptsH2.style.fontSize = '1.25rem';
     let outsideLinks = document.getElementById('links');
     outsideLinks.style.display = 'flex';
