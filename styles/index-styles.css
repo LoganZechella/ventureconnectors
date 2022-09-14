@@ -86,6 +86,9 @@
 
     body {
         width: 100vw;
+        background: linear-gradient(-156deg, #d89cece3, #92b7eec9);
+        background-size: 240% 240%;
+        animation: gradient-animation 28s ease infinite;
     }
 
     .main {
