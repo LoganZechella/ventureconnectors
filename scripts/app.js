@@ -1,4 +1,5 @@
-let startButton = document.getElementById('btn-start');
+// Global Variables
+ let startButton = document.getElementById('btn-start');
 let promptsH2 = document.getElementById('title');
 let promptsP = document.getElementById('description');
 let buttonsDiv = document.getElementById('buttons');
@@ -6,6 +7,7 @@ let yesButton = document.getElementById('btn-yes');
 let noButton = document.getElementById('btn-no');
 let finishButton = document.getElementById('btn-finish');
 let inputForm = document.getElementById('input-form');
+let emailPrompt = document.getElementById('email-prompt');
 
 let question1 = 'Is this your first time attending a Venture Connectors Event?';
 let question2 = 'Question 2';
@@ -20,6 +22,7 @@ let emailList = [];
 
 let exitPromptText = `Thanks for taking our survey and we hope to see you at our next event!<br/><br/> Keep up with Venture Connectors on social media by clicking the links below!`;
 
+// Starting Event Listener 
 startButton.addEventListener('click', function() {
     startButton.style.display = 'none';
     promptsP.style.display = 'none';
@@ -48,6 +51,8 @@ function noAnimation() {
 let yesCount = 0;
 let noCount = 0;
 
+// Yes Button Click Function
+
 function yesButtonClick() {
     yesCount++;
     let arrayIndex = yesCount + noCount;
@@ -61,11 +66,15 @@ function yesButtonClick() {
         noButton.style.display = 'none';
         inputForm.style.display = 'flex';
         finishButton.style.display = 'block';
-        promptsH2.innerHTML = 'Enter your email address below if you wish to stay in contact with Venture Connectors!';
-        document.getElementById('title').style.marginBottom = '0';
+        promptsH2.style.display = 'none';
+        emailPrompt.style.display = 'block';
+        emailPrompt.innerHTML = 'Enter your email address below if you wish to stay in contact with Venture Connectors!';
+        document.getElementById('prompts').style.marginBottom = '0';
         document.getElementById('prompts').style.marginTop = '1em';
     }
 }
+
+// No Button Click Function
 
 function noButtonClick() {
     noCount++;
@@ -80,13 +89,15 @@ function noButtonClick() {
         noButton.style.display = 'none';
         inputForm.style.display = 'flex';
         finishButton.style.display = 'block';
-        promptsH2.innerHTML = 'Enter your email address below if you wish to stay in contact with Venture Connectors!';
-        document.getElementById('title').style.marginBottom = '0';
+        promptsH2.style.display = 'none';
+        emailPrompt.style.display = 'block';
+        emailPrompt.innerHTML = 'Enter your email address below if you wish to stay in contact with Venture Connectors!';
+        document.getElementById('prompts').style.marginBottom = '0';
         document.getElementById('prompts').style.marginTop = '1em';
     }
 }
 
-
+// Finish Survey Button Click Function
 
 function finishSurvey() {
     let email = document.getElementById('input-email').value;
@@ -94,7 +105,7 @@ function finishSurvey() {
     
     inputForm.style.display = 'none';
     finishButton.style.display = 'none';
-    promptsH2.innerHTML = exitPromptText;
+    emailPrompt.innerHTML = exitPromptText;
     document.getElementById('prompts').style.marginTop = '2em';
     let outsideLinks = document.getElementById('links');
     outsideLinks.style.display = 'flex';

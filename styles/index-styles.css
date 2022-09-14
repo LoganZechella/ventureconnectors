@@ -11,6 +11,7 @@
     --font-fam: 'Arial Rounded MT Bold', sans-serif;
 }
 
+/* Mobile Media Query */
 @media screen and (max-width: 415px) {
 
     html {
@@ -37,17 +38,17 @@
         border-radius: 2em;
         padding-bottom: 2em;
         margin: 10vh 2em 0 2em;
-        min-height: 50vh;
+        min-height: 75vh;
     }
 
     #title {
-        font-size: 1.2em;
-        padding: 0 0.1em 0.5em 0.1em;
+        font-size: 1.5em;
+        padding: 0 0.1em 0 0.1em;
     }
 
     .prompts {
         font-size: 1.2em;
-        margin: 2em 1em 0 1em;
+        margin: 1em 1em 0 1em;
         /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.755); */
     }
 
@@ -77,6 +78,7 @@
     }
 }
 
+/* Tablet Media Query */
 @media screen and (min-width: 768px) {
 
     html {
@@ -143,6 +145,8 @@
 }
 
 
+/* Desktop/Default Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -160,12 +164,6 @@ body {
     animation: gradient-animation 28s ease infinite;
 }
 
-/* div {
-    border: 2px solid black;
-} */
-
-
-
 .prompts {
     display: flex;
     flex-direction: column;
@@ -182,6 +180,13 @@ body {
 #description {
     margin-bottom: 1em;
 }
+
+#email-prompt {
+    display: none;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
 
 #input-form {
     display: none;
