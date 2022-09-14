@@ -63,7 +63,7 @@ function yesButtonClick() {
         finishButton.style.display = 'block';
         promptsH2.innerHTML = 'Enter your email address below if you wish to stay in contact with Venture Connectors!';
         document.getElementById('title').style.marginBottom = '0';
-        document.getElementById('prompts').style.marginTop = '10vh';
+        document.getElementById('prompts').style.marginTop = '1em';
     }
 }
 
@@ -82,7 +82,7 @@ function noButtonClick() {
         finishButton.style.display = 'block';
         promptsH2.innerHTML = 'Enter your email address below if you wish to stay in contact with Venture Connectors!';
         document.getElementById('title').style.marginBottom = '0';
-        document.getElementById('prompts').style.marginTop = '10vh';
+        document.getElementById('prompts').style.marginTop = '1em';
     }
 }
 
@@ -96,7 +96,6 @@ function finishSurvey() {
     finishButton.style.display = 'none';
     promptsH2.innerHTML = exitPromptText;
     document.getElementById('prompts').style.marginTop = '2em';
-    promptsH2.style.fontSize = '1.25rem';
     let outsideLinks = document.getElementById('links');
     outsideLinks.style.display = 'flex';
 }

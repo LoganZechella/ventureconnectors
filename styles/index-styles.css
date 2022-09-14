@@ -7,11 +7,78 @@
     --palette-mid: #F2911B;
     --palette-light: #F2AA6B;
     --palette-lightest: #F2F2F2;
-    --palette-gradient: linear-gradient(220deg, rgba(7, 54, 115, 1) 0%, rgba(33, 130, 191, 1) 38%, rgba(242, 145, 27, 1) 64%, rgba(242, 170, 107, 1) 82%, rgba(242, 242, 242, 1) 100%);
-    --palette-gradient-fallback: rgb(7, 54, 115);
+    --animate-duration: 30s;
+    --font-fam: 'Arial Rounded MT Bold', sans-serif;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
+
+    html {
+        min-height: 100vh;
+    }
+
+    body {
+        width: 100vw;
+        background: linear-gradient(-110deg, #d89cece3, #92b7eec9);
+        background-size: 240% 240%;
+        animation: gradient-animation 28s ease infinite;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        opacity: 0.9;
+        border-radius: 2em;
+        padding-bottom: 2em;
+        margin: 10vh 2em 0 2em;
+        min-height: 50vh;
+    }
+
+    #title {
+        font-size: 1.2em;
+        padding: 0 0.1em 0.5em 0.1em;
+    }
+
+    .prompts {
+        font-size: 1.2em;
+        margin: 2em 1em 0 1em;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.755);
+    }
+
+    .input-email {
+        font-size: 1em;
+        height: 50px;
+        border-radius: 0.5em;
+        max-width: 65vw;
+    }
+
+    #btn-start,
+    #btn-yes,
+    #btn-no,
+    #btn-finish {
+        font-size: 1em;
+        border-color: rgba(141, 141, 141, 0.386);
+    }
+
+    .links {
+        height: 100px;
+        width: 90%;
+        margin: 0 1em 2em 1em;
+    }
+
+    .bi {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 768px) {
 
     html {
         min-height: 100vh;
@@ -20,52 +87,82 @@
     body {
         width: 100vw;
     }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        opacity: 0.9;
+        border-radius: 2em;
+        padding-bottom: 2em;
+        margin: 20vh 5em 0 5em;
+    }
+
+    #title {
+        font-size: 1.5em;
+        padding: 0 0.1em 0.5em 0.1em;
+    }
+
+    .prompts {
+        font-size: 2em;
+        margin: 2em 1em 0 1em;
+        /* text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.952); */
+    }
+
+    .input-email {
+        font-size: 1.5em;
+        height: 75px;
+        border-radius: 0.5em;
+    }
+
+    #btn-start,
+    #btn-yes,
+    #btn-no,
+    #btn-finish {
+        font-size: 1.5em;
+    }
+
+    .links {
+        height: 100px;
+        width: 90%;
+        margin: 2em 1em 2em 1em;
+
+    }
+
+    .bi {
+        width: 100px;
+        height: 100px;
+    }
 }
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 * {
     margin: 0;
     padding: 0;
-
 }
 
 html {
-    backdrop-filter: blur(10px) saturate(1.2);
+    backdrop-filter: saturate(1.2);
 }
 
 body {
-    font-family: "Arial Rounded MT Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #F2F2F2;
-    background: linear-gradient(-120deg,#c9c67a,#e39149,#d8418e,#0672c6);
+    font-family: var(--font-fam);
+    color: #000;
+    background: linear-gradient(-210deg, #d89cece3, #92b7eec9);
     background-size: 240% 240%;
-    animation: gradient-animation 60s ease infinite;
+    animation: gradient-animation 28s ease infinite;
 }
 
 /* div {
     border: 2px solid black;
 } */
 
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #cdcdcd54;
-    border-radius: 2em;
-    padding-bottom: 1em;
-    margin: 20vh 1em 0 1em;
-}
+
 
 .prompts {
     display: flex;
@@ -73,12 +170,10 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 2em 1em 0 1em;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.9);
+    /* text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.952); */
 }
 
 #title {
-    font-size: 1.75em;
     margin-bottom: 1em;
 }
 
@@ -95,7 +190,7 @@ body {
 
 #input-email {
     width: 75vw;
-    height: 50px;
+    /* height: 50px; */
     background-color: var(--palette-lightest);
     border: 2px solid var(--palette-less-dark);
     text-align: center;
@@ -152,8 +247,6 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    height: 75px;
-    width: 75vw;
     background-color: #ffffff4b;
     border-radius: 1em;
 }
@@ -167,8 +260,21 @@ body {
 }
 
 i {
-    height: 100px;
-    width: 100px;
     margin: 0 0 0 0;
     color: #000;
+}
+
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
