@@ -95,7 +95,7 @@ function finishSurvey() {
     inputForm.style.display = 'none';
     finishButton.style.display = 'none';
     promptsH2.innerHTML = exitPromptText;
-    document.getElementById('prompts').style.marginTop = '20vh';
+    document.getElementById('prompts').style.marginTop = '2em';
     promptsH2.style.fontSize = '1.25rem';
     let outsideLinks = document.getElementById('links');
     outsideLinks.style.display = 'flex';
